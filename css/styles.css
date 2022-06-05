@@ -61,18 +61,20 @@ header .container {
 /*-------------MAIN-------------*/
 /*-------------HERO-------------*/
 .hero {
+  max-width: 1600px;
+  min-height: 600px;
+  margin: 0 auto;
   background-color: var(--dark-background);
   background-image: linear-gradient(
       rgba(47, 48, 58, 0.4),
       rgba(47, 48, 58, 0.4)
     ),
     url(../images/working-people.jpg);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-size: 1600px;
   background-position: center;
   padding: 200px 0;
   text-align: center;
-  margin: 0 auto;
 }
 .hero-title {
   font-weight: 900;
@@ -113,15 +115,28 @@ header .container {
   text-align: left;
   align-items: center;
 }
-.advantage-item div {
-  width: 270px;
+.advantage-item::before {
+  content: "";
+  display: block;
   height: 120px;
-  background-color: var(--light-background);
   border-radius: 4px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: var(--light-background);
+  background-size: 70px;
+  background-repeat: no-repeat;
+  background-position: center;
   margin-bottom: 30px;
+}
+.icon-antenna::before {
+  background-image: url(../images/icons/antenna.svg);
+}
+.icon-clock::before {
+  background-image: url(../images/icons/clock.svg);
+}
+.icon-diagram::before {
+  background-image: url(../images/icons/diagram.svg);
+}
+.icon-astronaut::before {
+  background-image: url(../images/icons/astronaut.svg);
 }
 .advantage-title {
   font-weight: 700;
@@ -200,6 +215,7 @@ header .container {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 .network-icon:hover,
 .network-icon:focus {
@@ -215,7 +231,7 @@ header .container {
 .clients-list li:not(:last-child) {
   margin-right: 30px;
 }
-.client-item {
+.client-link {
   width: 170px;
   height: 92px;
   border: 1px solid var(--main-icon-color);
@@ -224,13 +240,13 @@ header .container {
   justify-content: center;
   align-items: center;
 }
-.client-item:hover svg,
-.client-item:focus svg {
-  fill: var(--accent);
-}
-.client-item:hover,
-.client-item:focus {
+.client-link:hover,
+.client-link:focus {
   border: 1px solid var(--accent);
+}
+.client-link:hover svg,
+.client-link:focus svg {
+  fill: var(--accent);
 }
 .client-icon {
   fill: var(--main-icon-color);
@@ -245,9 +261,10 @@ footer .container {
   padding-top: 60px;
   padding-bottom: 60px;
   display: flex;
+  align-items: baseline;
 }
-footer div.container section:not(:last-child) {
-  margin-right: 70px;
+footer div.container div:not(:last-child) {
+  margin-right: 54px;
 }
 .footer .logo {
   margin-bottom: 20px;
@@ -273,7 +290,7 @@ footer div.container section:not(:last-child) {
   color: var(--accent);
 }
 .cta {
-  font-weight: 700;
+  display: block;
   line-height: 1.14;
   text-transform: uppercase;
   color: var(--main-white);
@@ -304,7 +321,7 @@ footer .network-icon:focus {
   font-family: "Roboto", "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.39;
+  line-height: 1.62;
   text-align: center;
   letter-spacing: 0.03em;
   padding: 6px 22px;
@@ -334,8 +351,11 @@ footer .network-icon:focus {
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.project-item:hover,
-.project-item:focus {
+.project-link {
+  display: block;
+}
+.project-link:hover,
+.project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
